@@ -1,5 +1,6 @@
 ---
-import PostHog from '../components/posthog.astro'
+import PostHog from "../components/posthog.astro";
+import "./src/styles/global.css";
 ---
 
 <html lang="en">
@@ -13,9 +14,16 @@ import PostHog from '../components/posthog.astro'
     <meta name="generator" content={Astro.generator} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>Notes</title>
-	<PostHog />
+    <PostHog />
   </head>
   <body>
     <h1>Hello World</h1>
+    <iframe
+      allow="autoplay *; encrypted-media *;"
+      height="450"
+      style="width:100%;max-width:660px;overflow:hidden;background:transparent;"
+      sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+      src="https://embed.music.apple.com/ua/playlist/style/pl.u-06oxDJys7N5YEXm"
+    ></iframe>
   </body>
 </html>
