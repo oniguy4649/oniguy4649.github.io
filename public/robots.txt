@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oniguy4649.github.io/sitemap-index.xml
