@@ -1,29 +1,13 @@
 ---
-import PostHog from "../components/posthog.astro";
-import "./src/styles/global.css";
+import Main from "../layouts/Main.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <title>Notes</title>
-    <PostHog />
-  </head>
-  <body>
-    <h1>Hello World</h1>
-    <iframe
-      allow="autoplay *; encrypted-media *;"
-      height="450"
-      style="width:100%;max-width:660px;overflow:hidden;background:transparent;"
-      sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-      src="https://embed.music.apple.com/ua/playlist/style/pl.u-06oxDJys7N5YEXm"
-    ></iframe>
-  </body>
-</html>
+<Main>
+  <h1 class="text-2xl font-medium">Hello World!</h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+    nesciunt ipsam sint, delectus deleniti illum. Optio debitis atque earum
+    cupiditate quo. Laudantium officiis voluptate quos provident doloribus
+    molestias ullam minus.
+  </p>
+</Main>

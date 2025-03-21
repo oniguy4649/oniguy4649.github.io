@@ -1,0 +1,39 @@
+---
+import "../styles/global.css";
+import PostHog from "../components/PostHog.astro";
+import Footer from "../components/Footer.astro";
+import { getLangFromUrl } from "../utils/index.ts";
+
+const lang = getLangFromUrl(Astro.url);
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>
+      {title ? `oniguy4649 - ${title}` : `oniguy4649`}
+    </title>
+    <meta
+      name="description"
+      content={description ? description : "oniguy4649's personal website"}
+    />
+    <PostHog />
+  </head>
+  <body
+    class="flex flex-col min-h-screen w-full px-6 pt-2 sm:px-12 sm:pt-4 md:px-32 md:pt-6 lg:px-48 lg:pt-8 dark:bg-[#121212] dark:text-white"
+  >
+    <div class="flex-1">
+      <slot />
+    </div>
+    <Footer />
+  </body>
+</html>

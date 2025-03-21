@@ -1,0 +1,30 @@
+---
+const links = [
+  {
+    url: "/",
+    text: "Home",
+  },
+  {
+    url: "/links",
+    text: "Links",
+  },
+];
+---
+
+<div
+  class="mb-10 mt-4 flex gap-4 overflow-x-auto whitespace-nowrap text-lg [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+>
+  {
+    links.map((link) => (
+      <a
+        href={link.url}
+        class="hover:underline hover:underline-offset-4"
+        aria-label={link.text}
+        title={link.text}
+        data-astro-prefetch="viewport"
+      >
+        <p>{link.text}</p>
+      </a>
+    ))
+  }
+</div>
