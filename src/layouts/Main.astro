@@ -1,15 +1,15 @@
 ---
 import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
-import BaseLayout from "./Base.astro";
+import Base from "./Base.astro";
 
 const { title, description } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
+<Base title={title} description={description}>
   <body class={Astro.props.class}>
     <Header />
     <Nav />
     <slot />
   </body>
-</BaseLayout>
+</Base>
