@@ -1,0 +1,49 @@
+---
+interface Frontmatter {
+  title: string;
+  date: string;
+}
+
+const allPosts = Object.entries(
+  import.meta.glob<{ frontmatter: Frontmatter }>("../pages/posts/*.md", {
+    eager: true,
+  })
+)
+  .map(([path, post]) => ({
+    ...post,
+    path: path
+      .replace("../pages/posts/", "/posts/")
+      .replace(".md", ""),
+  }))
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).getTime() -
+      new Date(a.frontmatter.date).getTime()
+  );
+---
+
+<ul class="space-y-4">
+  {
+    allPosts.map((post) => (
+      <li>
+        <a
+          href={post.path}
+          class="flex flex-col sm:flex-row sm:items-center gap-4 visited:text-purple-500/90 hover:text-blue-600 dark:hover:text-blue-400"
+        >
+          <p class="flex-shrink-0 text-gray-500 dark:text-gray-400">
+            <time datetime={post.frontmatter.date}>
+              {new Date(post.frontmatter.date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
+            </time>
+          </p>
+          <p class="text-lg line-clamp-2 hover:underline">
+            {post.frontmatter.title}
+          </p>
+        </a>
+      </li>
+    ))
+  }
+</ul>
