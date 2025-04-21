@@ -4,7 +4,7 @@ const { frontmatter } = Astro.props;
 ---
 
 <Main title={frontmatter.title} description={frontmatter.description}>
-  <article class="prose prose-stone dark:prose-invert max-w-none">
+  <article class="prose prose-stone dark:prose-invert prose-img:rounded-xl max-w-none">
       <slot />
   </article>
 </Main>
